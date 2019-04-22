@@ -104,21 +104,21 @@ function! slash#blink(times, delay)
   return ''
 endfunction
 
-map      <expr> <plug>(slash-trailer) <sid>trailer()
-imap     <expr> <plug>(slash-trailer) <sid>trailer_on_leave()
-cnoremap        <plug>(slash-cr)      <cr>
-noremap  <expr> <plug>(slash-prev)    <sid>prev()
-inoremap        <plug>(slash-prev)    <nop>
-noremap!        <plug>(slash-nop)     <nop>
+map <silent><expr><plug>(slash-trailer) <sid>trailer()
+imap <silent><expr><plug>(slash-trailer) <sid>trailer_on_leave()
+cnoremap <silent><plug>(slash-cr) <cr>
+noremap  <silent><expr><plug>(slash-prev) <sid>prev()
+inoremap <silent><plug>(slash-prev) <nop>
+noremap! <silent><plug>(slash-nop) <nop>
 
-cmap <expr> <cr> <sid>wrap("\<cr>")
-map  <expr> n    <sid>wrap('n')
-map  <expr> N    <sid>wrap('N')
-map  <expr> gd   <sid>wrap('gd')
-map  <expr> gD   <sid>wrap('gD')
-map  <expr> *    <sid>wrap(<sid>immobile('*'))
-map  <expr> #    <sid>wrap(<sid>immobile('#'))
-map  <expr> g*   <sid>wrap(<sid>immobile('g*'))
-map  <expr> g#   <sid>wrap(<sid>immobile('g#'))
-xmap <expr> *    <sid>wrap(<sid>immobile("y/\<c-r>=<sid>escape(0)\<plug>(slash-cr)\<plug>(slash-cr)"))
-xmap <expr> #    <sid>wrap(<sid>immobile("y?\<c-r>=<sid>escape(1)\<plug>(slash-cr)\<plug>(slash-cr)"))
+cmap <silent><expr><cr> <sid>wrap("\<cr>")
+map <silent><expr> n <sid>wrap('n')
+map <silent><expr> N <sid>wrap('N')
+map <silent><expr> gd <sid>wrap('gd')
+map <silent><expr> gD <sid>wrap('gD')
+map <silent><expr> * <sid>wrap(<sid>immobile('*'))
+map <silent><expr> # <sid>wrap(<sid>immobile('#'))
+map <silent><expr> g* <sid>wrap(<sid>immobile('g*'))
+map <silent><expr> g# <sid>wrap(<sid>immobile('g#'))
+xmap <silent><expr> * <sid>wrap(<sid>immobile("y/\<c-r>=<sid>escape(0)\<plug>(slash-cr)\<plug>(slash-cr)"))
+xmap <silent><expr> # <sid>wrap(<sid>immobile("y?\<c-r>=<sid>escape(1)\<plug>(slash-cr)\<plug>(slash-cr)"))
