@@ -36,11 +36,6 @@ function! s:immobile(seq)
 endfunction
 
 function! s:trailer()
-  augroup slash
-    autocmd!
-    autocmd CursorMoved,CursorMovedI * set nohlsearch | autocmd! slash
-  augroup END
-
   let seq = foldclosed('.') != -1 ? 'zv' : ''
   if exists('s:winline')
     let sdiff = winline() - s:winline
